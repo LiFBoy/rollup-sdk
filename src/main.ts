@@ -1,1 +1,1 @@
-export { ua, isIOS, isAndroid } from './deviceInfo';
+export { default as deviceInfo } from './deviceInfo';

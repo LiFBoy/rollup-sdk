@@ -1,11 +1,9 @@
 const ua = window.navigator.userAgent.toLowerCase();
 
-function isIOS() {
-  return /(ipad|iphone|ipod)/i.test(ua);
-}
+const isIos = /(iphone|ipad|ipod)/i.test(ua);
 
-function isAndroid() {
-  return /android/i.test(ua);
-}
+const isAndroid = /android/i.test(ua);
 
-export { ua, isIOS, isAndroid };
+const inWeixin = /MicroMessenger/i.test(ua);
+
+export default { ua, isIos, isAndroid, inWeixin };
