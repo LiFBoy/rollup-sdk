@@ -1,1 +1,1 @@
-export { default as deviceInfo } from './deviceInfo';
+export {default as theme} from './theme';

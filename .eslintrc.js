@@ -2,19 +2,20 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
 
   extends: 'eslint:recommended',
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always']
+    quotes: [1, 'single'],
+    semi: ['error', 'always'],
+    'no-constant-condition': 0,
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint']
+  plugins: ['@typescript-eslint'],
 };
