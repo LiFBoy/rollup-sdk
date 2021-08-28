@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import axios from 'axios';
 // const {version, name} = require('../package.json');
-import {version, name} from '../package.json';
+import { version, name } from '../package.json';
 const ENUM_THEME = {
   0: '中国红',
   1: '日落黄',
@@ -19,7 +19,7 @@ function request(url: string, options = {}) {
       ...options,
     })
       .then((response) => {
-        const {data} = response;
+        const { data } = response;
         if (Number(data.code) === 200 || data.code === 0) {
           resolve(data.data);
         } else {
@@ -41,7 +41,7 @@ function GetQueryString(name: string) {
   return null;
 }
 const env: string = (
-  document.querySelector('meta[name="x-server-env"]') || {content: 'test'}
+  document.querySelector('meta[name="x-server-env"]') || { content: 'test' }
 ).content;
 
 const origin =
@@ -64,13 +64,14 @@ const getAppColor = (): Promise<any> => {
     appId: GetQueryString('appId'),
   };
   return request(
-    `${origin}/orgTemplate/getAppColor?corpid=${params.corpid}&appId=${params.appId}`
+    `${origin}/mobile/workbench/base/home/info?corpid=${params.corpid}&appId=${params.appId}`
   );
 };
 
 const run = function () {
-  getAppColor().then((res: number) => {
-    console.log(res, 'theme');
+  getAppColor().then((data: any) => {
+    const res = data.colorType;
+    console.log(res, 'theme222');
     (window as any).jssdk.theme.THEME = res;
     const linkTag = document.createElement('link');
     linkTag.setAttribute('rel', 'stylesheet');
@@ -84,4 +85,4 @@ const run = function () {
   });
 };
 
-export default {ENUM_THEME, THEME, run};
+export default { ENUM_THEME, THEME, run };
