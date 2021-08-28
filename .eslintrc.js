@@ -5,7 +5,8 @@ module.exports = {
     es6: true,
   },
 
-  extends: 'eslint:recommended',
+  // extends: 'eslint:recommended',
+  extends: ['airbnb', 'prettier'],
   parserOptions: {
     sourceType: 'module',
   },

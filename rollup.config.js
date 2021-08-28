@@ -1,8 +1,8 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve'; // 使用第三方模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJs模块转换成ES2015
-import {eslint} from 'rollup-plugin-eslint';
-import {terser} from 'rollup-plugin-terser';
+import { eslint } from 'rollup-plugin-eslint';
+import { terser } from 'rollup-plugin-terser';
 import json from 'rollup-plugin-json';
 // import builtins from 'rollup-plugin-node-builtins';
 // import globals from 'rollup-plugin-node-globals';
@@ -13,9 +13,10 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx', '.json'];
 export default {
   input: 'src/main.ts',
   output: {
-    name: 'jssdk',
+    name: 'authcenter',
     file: 'lib/jssdk.js',
     format: 'umd',
+    // sourcemap: true,
     // globals: {
     //   stream: 'stream',
     //   window: 'window',
@@ -26,6 +27,7 @@ export default {
     // },
     // banner: global,
   },
+  // external: ['qs'],
   plugins: [
     resolve({
       extensions,
@@ -36,10 +38,10 @@ export default {
     // nodePolyfills(),
     // globals(),
     // builtins(),
-    eslint({
-      include: ['src/**'],
-      exclude: ['node_modules/**'],
-    }),
+    // eslint({
+    //   include: ['src/**'],
+    //   exclude: ['node_modules/**'],
+    // }),
     terser(),
     json(),
     babel({
