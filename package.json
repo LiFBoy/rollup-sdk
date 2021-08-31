@@ -1,14 +1,14 @@
 {
   "name": "jssdk",
   "version": "1.0.1",
-  "description": "",
+  "description": "Skin changing SDK",
   "main": "src/main.ts",
   "scripts": {
     "type-check": "tsc",
     "type-check:watch": "npm run type-check -- -w",
     "prebuild": "rm -rf ./lib",
     "watch": "rollup -cw",
-    "bundle": "npm run prebuild && rollup -c && npm run copy",
+    "build": "npm run prebuild && rollup -c && npm run copy",
     "copy": "cp -r ./src/css/* ./lib/",
     "cdn": "nbugs-ship-cdn \"lib/**\" --base lib",
     "cdn-live": "nbugs-ship-cdn \"lib/**\" --base lib --env production"

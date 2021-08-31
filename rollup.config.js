@@ -1,8 +1,8 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve'; // 使用第三方模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJs模块转换成ES2015
-import {eslint} from 'rollup-plugin-eslint';
-import {terser} from 'rollup-plugin-terser';
+import { eslint } from 'rollup-plugin-eslint';
+import { terser } from 'rollup-plugin-terser';
 import json from 'rollup-plugin-json';
 // import builtins from 'rollup-plugin-node-builtins';
 // import globals from 'rollup-plugin-node-globals';

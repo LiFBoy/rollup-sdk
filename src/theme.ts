@@ -1,6 +1,5 @@
 /* eslint-disable indent */
 import axios from 'axios';
-// const {version, name} = require('../package.json');
 import { version, name } from '../package.json';
 const ENUM_THEME = {
   0: '中国红',
@@ -12,7 +11,7 @@ const ENUM_THEME = {
 let THEME: number = 0;
 
 function request(url: string, options = {}) {
-  return new Promise((resolve, reject) => {
+  return new Promise<any>((resolve, reject) => {
     return axios({
       url,
       withCredentials: true,
@@ -71,7 +70,6 @@ const getAppColor = (): Promise<any> => {
 const run = function () {
   getAppColor().then((data: any) => {
     const res = data.colorType;
-    console.log(res, 'theme222');
     (window as any).jssdk.theme.THEME = res;
     const linkTag = document.createElement('link');
     linkTag.setAttribute('rel', 'stylesheet');
