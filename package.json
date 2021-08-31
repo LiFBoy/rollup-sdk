@@ -8,7 +8,7 @@
     "type-check:watch": "npm run type-check -- -w",
     "prebuild": "rm -rf ./lib",
     "watch": "rollup -cw",
-    "bundle": "npm run prebuild && rollup -c && npm run copy",
+    "bundle": "npm run prebuild && rollup -c",
     "copy": "cp -r ./src/css/* ./lib/",
     "cdn": "nbugs-ship-cdn \"lib/**\" --base lib",
     "cdn-live": "nbugs-ship-cdn \"lib/**\" --base lib --env production"

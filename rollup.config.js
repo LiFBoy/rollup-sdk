@@ -14,7 +14,7 @@ export default {
   input: 'src/main.ts',
   output: {
     name: 'authcenter',
-    file: 'lib/jssdk.js',
+    file: '/Users/ljb/nbugs-user-switching/jssdk.js',
     format: 'umd',
     // sourcemap: true,
     // globals: {

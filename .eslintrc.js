@@ -4,9 +4,7 @@ module.exports = {
     commonjs: true,
     es6: true,
   },
-
-  // extends: 'eslint:recommended',
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'eslint:recommended'],
   parserOptions: {
     sourceType: 'module',
   },

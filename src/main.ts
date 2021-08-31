@@ -1,6 +1,7 @@
 /* eslint-disable indent */
 import axios from 'axios';
 import qs from 'qs';
+
 const ENUM_THEME = {
   0: '中国红',
   1: '日落黄',
